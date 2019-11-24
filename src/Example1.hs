@@ -1,6 +1,5 @@
 module Main (main) where
 
---import Control.Concurrent (runInBoundThread)
 import System.IO
 
 import Img
@@ -30,7 +29,6 @@ fshader t x y = --Color r 0 0
                | x >= 256.0 = 255
                | otherwise = floor x
 
---main = runInBoundThread $ do
 main = do
   hSetBuffering stdout NoBuffering
   shaderMain screenWidth screenHeight shader -- (fshaderToShader fshader)
